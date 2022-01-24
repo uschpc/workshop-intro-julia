@@ -30,6 +30,27 @@ class: left, top, title-slide
 
 ---
 
+## Job script example
+
+```bash
+#!/bin/bash
+
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=8GB
+#SBATCH --time=1:00:00
+#SBATCH --account=<project_id>
+
+module purge
+module load gcc/11.2.0
+module load julia/1.7.0
+
+julia script.jl
+```
+
+---
+
 ## Additional resources
 
 [Using Julia on CARC systems](https://www.carc.usc.edu/user-information/user-guides/software-and-programming/julia)  
