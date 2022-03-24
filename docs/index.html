@@ -14706,7 +14706,7 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">import</span> <span class="n">Pkg</span><span class="p">;</span> <span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;DataFrames&quot;</span><span class="p">)</span>
@@ -14731,8 +14731,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre><span class="ansi-green-intense-fg ansi-bold">    Updating</span> registry at `~/.julia/registries/General.toml`
-<span class="ansi-green-intense-fg ansi-bold">   Resolving</span> package versions...
+<pre><span class="ansi-green-intense-fg ansi-bold">   Resolving</span> package versions...
 <span class="ansi-green-intense-fg ansi-bold">  No Changes</span> to `~/.julia/environments/v1.7/Project.toml`
 <span class="ansi-green-intense-fg ansi-bold">  No Changes</span> to `~/.julia/environments/v1.7/Manifest.toml`
 </pre>
@@ -14826,7 +14825,7 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">println</span><span class="p">(</span><span class="nb">true</span> <span class="o">+</span> <span class="nb">false</span> <span class="o">+</span> <span class="nb">true</span> <span class="o">+</span> <span class="nb">false</span><span class="p">)</span>
@@ -14853,7 +14852,7 @@ div.jp-OutputPrompt {
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>2
-y not defined
+true
 </pre>
 </div>
 </div>
@@ -14871,7 +14870,9 @@ y not defined
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="String-Operations">String Operations<a class="anchor-link" href="#String-Operations">&#182;</a></h2><ul>
 <li>Concatenate strings, Python uses <b>+</b>, Julia uses <b>*</b></li>
-<li><b>SubString(s, i, j)</b> to find substring of s from i to jth index and <b>split(s, c)</b> to split s on c</li>
+<li><b>SubString(s, i, j)</b> to find substring of s from i to jth index</li>
+<li><b>split(s, c)</b> to split s on c, <b>join(s, c)</b> to join s on c.</li>
+<li><b>repeat(s, n)</b> to repeat s, n times.</li>
 <li><b>parse(Int64, s)</b> to convert an Integer in string format back to Integer</li>
 <li>Within a string, mentioning an arithmetic expression within <b>\$(expression)</b>, like "Hello Mr. $(1/0)"</li>
 </ul>
@@ -14884,7 +14885,7 @@ y not defined
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Hello &quot;</span> <span class="o">*</span> <span class="s">&quot;World!&quot;</span><span class="p">)</span>
@@ -14943,6 +14944,7 @@ Hello Mr. Inf
 <li>Array Comprehension</li>
 <li>Push and Pop</li>
 <li>Hcat and Vcat</li>
+<li><b><u><i>Indexing in Julia starts with 1 and not 0</i></u></b></li>
 </ul>
 
 </div>
@@ -14953,14 +14955,13 @@ Hello Mr. Inf
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">sample_vector</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 <span class="n">sample_1d_matrix</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">]</span>
 <span class="n">sample_2d_matrix</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">;</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">]</span>
 <span class="n">mixed_vector</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s">&quot;Hello&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]]</span>
-<span class="nb">nothing</span>
 </pre></div>
 
      </div>
@@ -14985,14 +14986,13 @@ Hello Mr. Inf
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="nd">@time</span> <span class="n">cube_vector</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">^</span><span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">:</span><span class="mi">10000</span><span class="p">]</span>
 <span class="nd">@time</span> <span class="n">cube_generator</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">^</span><span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">:</span><span class="mi">10000</span><span class="p">)</span>
 <span class="nd">@time</span> <span class="n">sum</span><span class="p">(</span><span class="n">cube_vector</span><span class="p">)</span>
 <span class="nd">@time</span> <span class="n">sum</span><span class="p">(</span><span class="n">cube_generator</span><span class="p">)</span>
-<span class="nb">nothing</span>
 </pre></div>
 
      </div>
@@ -15014,10 +15014,10 @@ Hello Mr. Inf
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>  0.008896 seconds (46.12 k allocations: 2.539 MiB, 103.13% compilation time)
-  0.007927 seconds (2.30 k allocations: 141.383 KiB, 72.62% gc time, 98.78% compilation time)
-  0.003448 seconds (246 allocations: 12.484 KiB, 99.87% compilation time)
-  0.007188 seconds (61.39 k allocations: 3.429 MiB, 99.76% compilation time)
+<pre>  0.010730 seconds (44.36 k allocations: 2.431 MiB, 98.87% compilation time)
+  0.001977 seconds (2.29 k allocations: 141.305 KiB, 95.05% compilation time)
+  0.000007 seconds (1 allocation: 16 bytes)
+  0.009029 seconds (61.37 k allocations: 3.396 MiB, 99.62% compilation time)
 </pre>
 </div>
 </div>
@@ -15047,7 +15047,7 @@ Hello Mr. Inf
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">tup_a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
@@ -15145,7 +15145,7 @@ Dict(&#34;c&#34; =&gt; 3, &#34;a&#34; =&gt; 1, &#34;d&#34; =&gt; 4)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">function</span> <span class="n">greet_n</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
@@ -15212,7 +15212,7 @@ Hello World!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">sum_series</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="o">=</span> <span class="n">sum</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="o">:</span><span class="n">N</span><span class="p">)</span>
@@ -15318,7 +15318,7 @@ Hello World!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="k">begin</span>
@@ -15379,7 +15379,7 @@ Hello World!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
@@ -15447,7 +15447,7 @@ end
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
@@ -15531,7 +15531,7 @@ end
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">struct</span> <span class="kt">User</span>
@@ -15539,7 +15539,7 @@ end
     <span class="n">phone</span><span class="o">::</span><span class="kt">String</span>
     <span class="n">zip_code</span><span class="o">::</span><span class="kt">Int64</span>
 <span class="k">end</span>
-<span class="n">a</span><span class="o">=</span><span class="n">User</span><span class="p">(</span><span class="s">&quot;Prashanth&quot;</span><span class="p">,</span> <span class="s">&quot;123-456-7890&quot;</span><span class="p">,</span> <span class="mi">90007</span><span class="p">)</span>
+<span class="n">a</span><span class="o">=</span><span class="n">User</span><span class="p">(</span><span class="s">&quot;Peter&quot;</span><span class="p">,</span> <span class="s">&quot;123-456-7890&quot;</span><span class="p">,</span> <span class="mi">90007</span><span class="p">)</span>
 <span class="n">println</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="n">a</span><span class="o">.</span><span class="n">zip_code</span> <span class="o">=</span> <span class="mi">560100</span>
 </pre></div>
@@ -15563,7 +15563,7 @@ end
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>User(&#34;Prashanth&#34;, &#34;123-456-7890&#34;, 90007)
+<pre>User(&#34;Peter&#34;, &#34;123-456-7890&#34;, 90007)
 </pre>
 </div>
 </div>
@@ -15582,7 +15582,7 @@ Stacktrace:
  [1] setproperty!(x::User, f::Symbol, v::Int64)
    @ Base ./Base.jl:43
  [2] top-level scope
-   @ In[17]:8
+   @ In[40]:8
  [3] eval
    @ ./boot.jl:373 [inlined]
  [4] include_string(mapexpr::typeof(REPL.softscope), mod::Module, code::String, filename::String)
@@ -15599,7 +15599,7 @@ Stacktrace:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">mutable struct</span> <span class="kt">UserMut</span>
@@ -15607,7 +15607,7 @@ Stacktrace:
     <span class="n">phone</span><span class="o">::</span><span class="kt">String</span>
     <span class="n">zip_code</span><span class="o">::</span><span class="kt">Int64</span>
 <span class="k">end</span>
-<span class="n">b</span><span class="o">=</span><span class="n">UserMut</span><span class="p">(</span><span class="s">&quot;Prashanth&quot;</span><span class="p">,</span> <span class="s">&quot;123-456-7890&quot;</span><span class="p">,</span> <span class="mi">90007</span><span class="p">)</span>
+<span class="n">b</span><span class="o">=</span><span class="n">UserMut</span><span class="p">(</span><span class="s">&quot;Peter&quot;</span><span class="p">,</span> <span class="s">&quot;123-456-7890&quot;</span><span class="p">,</span> <span class="mi">90007</span><span class="p">)</span>
 <span class="n">b</span><span class="o">.</span><span class="n">zip_code</span> <span class="o">=</span> <span class="mi">560100</span>
 <span class="n">println</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
@@ -15631,7 +15631,7 @@ Stacktrace:
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>UserMut(&#34;Prashanth&#34;, &#34;123-456-7890&#34;, 560100)
+<pre>UserMut(&#34;Peter&#34;, &#34;123-456-7890&#34;, 560100)
 </pre>
 </div>
 </div>
@@ -15645,7 +15645,7 @@ Stacktrace:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">mutable struct</span> <span class="kt">UserMutConst</span>
@@ -15655,7 +15655,7 @@ Stacktrace:
     <span class="n">UserMutConst</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">=</span> <span class="n">new</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s">&quot;000-000-0000&quot;</span><span class="p">,</span> <span class="mi">99999</span><span class="p">)</span>
     <span class="n">UserMutConst</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">phone</span><span class="p">)</span> <span class="o">=</span> <span class="n">new</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">phone</span><span class="p">,</span> <span class="mi">99999</span><span class="p">)</span>
 <span class="k">end</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">UserMutConst</span><span class="p">(</span><span class="s">&quot;Prashanth&quot;</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">UserMutConst</span><span class="p">(</span><span class="s">&quot;Peter&quot;</span><span class="p">)</span>
 <span class="n">println</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
 
@@ -15678,7 +15678,7 @@ Stacktrace:
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>UserMutConst(&#34;Prashanth&#34;, &#34;000-000-0000&#34;, 99999)
+<pre>UserMutConst(&#34;Peter&#34;, &#34;000-000-0000&#34;, 99999)
 </pre>
 </div>
 </div>
@@ -15692,7 +15692,7 @@ Stacktrace:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">Base</span><span class="o">.</span><span class="nd">@kwdef</span> <span class="k">mutable struct</span> <span class="kt">UserMutDef</span>
@@ -15700,9 +15700,9 @@ Stacktrace:
     <span class="n">phone</span><span class="o">::</span><span class="kt">String</span><span class="o">=</span><span class="s">&quot;000-000-0000&quot;</span>
     <span class="n">zip_code</span><span class="o">::</span><span class="kt">Int64</span><span class="o">=</span><span class="mi">99999</span>
 <span class="k">end</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">UserMutDef</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Prashanth&quot;</span><span class="p">)</span>
-<span class="n">e</span> <span class="o">=</span> <span class="n">UserMutDef</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Prashanth&quot;</span><span class="p">,</span> <span class="n">phone</span> <span class="o">=</span> <span class="s">&quot;123-456-7890&quot;</span><span class="p">)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">UserMutDef</span><span class="p">(</span><span class="s">&quot;Prashanth&quot;</span><span class="p">,</span> <span class="s">&quot;123-456-7890&quot;</span><span class="p">,</span> <span class="mi">90007</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">UserMutDef</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Peter&quot;</span><span class="p">)</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">UserMutDef</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Peter&quot;</span><span class="p">,</span> <span class="n">phone</span> <span class="o">=</span> <span class="s">&quot;123-456-7890&quot;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">UserMutDef</span><span class="p">(</span><span class="s">&quot;Peter&quot;</span><span class="p">,</span> <span class="s">&quot;123-456-7890&quot;</span><span class="p">,</span> <span class="mi">90007</span><span class="p">)</span>
 <span class="n">println</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 </pre></div>
 
@@ -15725,9 +15725,9 @@ Stacktrace:
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>UserMutDef(&#34;Prashanth&#34;, &#34;000-000-0000&#34;, 99999)
-UserMutDef(&#34;Prashanth&#34;, &#34;123-456-7890&#34;, 99999)
-UserMutDef(&#34;Prashanth&#34;, &#34;123-456-7890&#34;, 90007)
+<pre>UserMutDef(&#34;Peter&#34;, &#34;000-000-0000&#34;, 99999)
+UserMutDef(&#34;Peter&#34;, &#34;123-456-7890&#34;, 99999)
+UserMutDef(&#34;Peter&#34;, &#34;123-456-7890&#34;, 90007)
 </pre>
 </div>
 </div>
@@ -15743,7 +15743,7 @@ UserMutDef(&#34;Prashanth&#34;, &#34;123-456-7890&#34;, 90007)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Exercise-3">Exercise 3<a class="anchor-link" href="#Exercise-3">&#182;</a></h2><p>Create a custom type for a restaurant, the restaurant would have a name, address, cuisine type,average rating, dishes they serve (plural here), each dish would belong to a course (main course, dessert, appetizer etc), it could be vegan, vegetarian, non vegetarian, it could have a spice level.</p>
+<h2 id="Exercise-3">Exercise 3<a class="anchor-link" href="#Exercise-3">&#182;</a></h2><p>Create a custom type for a restaurant, the restaurant would have a name, address, cuisine type,average rating, dishes they serve (plural here), each dish would belong to a course (main course, dessert, appetizer etc), it could be vegetarian or non vegetarian, it could have a spice level.</p>
 
 </div>
 </div>
@@ -15760,6 +15760,7 @@ UserMutDef(&#34;Prashanth&#34;, &#34;123-456-7890&#34;, 90007)
 <li>Julia Documentation book : <a href="https://raw.githubusercontent.com/JuliaLang/docs.julialang.org/assets/julia-1.7.1.pdf">https://raw.githubusercontent.com/JuliaLang/docs.julialang.org/assets/julia-1.7.1.pdf</a></li>
 <li>Your Julia code is running Slow ? Troubleshoot with these tips : <a href="https://docs.julialang.org/en/v1/manual/performance-tips/#man-performance-tips">https://docs.julialang.org/en/v1/manual/performance-tips/#man-performance-tips</a></li>
 <li>Reasons for Latency : <a href="https://julialang.org/blog/2021/01/precompile_tutorial/">https://julialang.org/blog/2021/01/precompile_tutorial/</a></li>
+<li>Learn X in Y link : <a href="https://learnxinyminutes.com/docs/julia/">https://learnxinyminutes.com/docs/julia/</a></li>
 </ul>
 
 </div>
