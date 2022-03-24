@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>Julia101CARC slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Intro to Julia by USC CARC slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 <!-- General and theme style sheets -->
 <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/reveal.css">
@@ -14670,30 +14670,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div><aside class="notes">
-
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>You guys are gonna learn a new language today. What makes this language different from any other ? So let us first convince ourselves as to why we should really learn Julia.</p>
-<ol>
-<li>Dynamic Language ! What is that ?<ul>
-<li>Consider C++, whatever code you write, it is first compiled by the compiler and then run. Code is checked for correctness, types of the variables are known. This is a static Language. Let's consider another language Python, compilation phase doesn't exist. The types of the variables are known only during runtime. That's a synamic language.</li>
-<li>Static languages are more efficient when it comes to runtime because most tasks are completed during Compile time. And Dynamic languages are easier to code in and they offer you runtime flexibility such as you don't have to decide what will be the size of your integer, how long your array is going to be at the start of the program. </li>
-<li>A programmers dream would be to have a Dynamic Language with the performance of a Static Language !</li>
-</ul>
-</li>
-<li>Meaning fewer lines of readable code with same or better performance. (demonstration 1, this is an extreme case where the difference was obvious, in multiple cases, the difference may not be this obvious)</li>
-</ol>
-
-</div>
-</div>
-</div>
-</div>
-</aside></section></section><section><section>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14800,7 +14777,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Julia is not aware as to what the programmer desires and the result would be different for different operations</p>
+<p>Julia is not aware as to what the programmer desires and the result would be different for different operations. Ceil/Floor/Round what to do ? So let's break :(</p>
 
 </div>
 </div>
@@ -14838,7 +14815,7 @@ div.jp-OutputPrompt {
 <li>AND evaluates to true if <b>ALL</b> conditions are true. If the first condition is false, it won't even check the later conditions</li>
 <li>OR evaluates to true if <b>ANY</b> conditions are true. If the first condition is true, it won't even check the later conditions</li>
 <li>What's true + false + true + false ??</li>
-<li>@isdefined function - think of a use ?</li>
+<li>@isdefined function - think of a usecase ?</li>
 </ul>
 
 </div>
@@ -14896,7 +14873,7 @@ y not defined
 <li>Concatenate strings, Python uses <b>+</b>, Julia uses <b>*</b></li>
 <li><b>SubString(s, i, j)</b> to find substring of s from i to jth index and <b>split(s, c)</b> to split s on c</li>
 <li><b>parse(Int64, s)</b> to convert an Integer in string format back to Integer</li>
-<li>Within a string, mentioning an arithmetic expression within <b>\$\(expression\)</b>, like "Hello Mr. $(1/0)"</li>
+<li>Within a string, mentioning an arithmetic expression within <b>\$(expression)</b>, like "Hello Mr. $(1/0)"</li>
 </ul>
 
 </div>
@@ -14907,14 +14884,14 @@ y not defined
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Hello &quot;</span> <span class="o">*</span> <span class="s">&quot;World!&quot;</span><span class="p">)</span>
 <span class="n">println</span><span class="p">(</span><span class="n">string</span><span class="p">(</span><span class="s">&quot;Hello World, &quot;</span><span class="p">,</span> <span class="s">&quot;another way&quot;</span><span class="p">))</span>
 <span class="n">println</span><span class="p">(</span><span class="kt">SubString</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 <span class="n">println</span><span class="p">(</span><span class="n">split</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">,</span> <span class="s">&quot; &quot;</span><span class="p">))</span>
-<span class="n">println</span><span class="p">(</span><span class="n">parse</span><span class="p">(</span><span class="kt">Int64</span><span class="p">,</span> <span class="s">&quot;11&quot;</span><span class="p">))</span>
+<span class="n">println</span><span class="p">(</span><span class="n">parse</span><span class="p">(</span><span class="kt">Int64</span><span class="p">,</span> <span class="s">&quot;13&quot;</span><span class="p">))</span>
 <span class="n">println</span><span class="p">(</span><span class="s">&quot;Hello Mr. </span><span class="si">$</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -14941,7 +14918,7 @@ y not defined
 Hello World, another way
 llo Worl
 SubString{String}[&#34;Hello&#34;, &#34;World!&#34;]
-11
+13
 Hello Mr. Inf
 </pre>
 </div>
@@ -15277,7 +15254,7 @@ Hello World!
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Exercise-1">Exercise 1<a class="anchor-link" href="#Exercise-1">&#182;</a></h2><p>Write a function which takes distance in KM (floating point number), time in HH:MM:SS (string) and return speed in Miles/Hour</p>
+<h2 id="Exercise-1">Exercise 1<a class="anchor-link" href="#Exercise-1">&#182;</a></h2><p>Write a function which takes distance in KM (floating point number), time in HH:MM:SS (string) and return speed in Miles/Hour. <br>[1mile = 1.6km]</p>
 
 </div>
 </div>
@@ -15526,7 +15503,7 @@ end
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Exercise-2">Exercise 2<a class="anchor-link" href="#Exercise-2">&#182;</a></h2><p>Using a loop, find sum of first 10 fibonacci series, while or for, pick your choice!</p>
+<h2 id="Exercise-2">Exercise 2<a class="anchor-link" href="#Exercise-2">&#182;</a></h2><p>Loop from 1 to 20, print fizz if the number is divisible by 3, 5 if the number is divisible by buzz, break the loop if it’s divisible by both, otherwise continue.</p>
 
 </div>
 </div>
@@ -15542,6 +15519,7 @@ end
 <li>you can create your own composite types using Struct</li>
 <li>use the mutable keyword to define the struct if you want it to be editable</li>
 <li>we can define constructors for a struct</li>
+<li>type of a key could be another composite type created earlier</li>
 <li>default values can be mentioned for keys</li>
 </ul>
 
@@ -15765,7 +15743,7 @@ UserMutDef(&#34;Prashanth&#34;, &#34;123-456-7890&#34;, 90007)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Exercise-3">Exercise 3<a class="anchor-link" href="#Exercise-3">&#182;</a></h2><p>Create a custom type for a restaurant</p>
+<h2 id="Exercise-3">Exercise 3<a class="anchor-link" href="#Exercise-3">&#182;</a></h2><p>Create a custom type for a restaurant, the restaurant would have a name, address, cuisine type,average rating, dishes they serve (plural here), each dish would belong to a course (main course, dessert, appetizer etc), it could be vegan, vegetarian, non vegetarian, it could have a spice level.</p>
 
 </div>
 </div>
